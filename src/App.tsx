@@ -76,12 +76,9 @@ const App = () => {
               <div className="header">
                 <Header />
               </div>
-              <div
-                className="fade-in"
-                style={{ minHeight: "100vh", paddingTop: "40px" }}
-              >
+              <div className="fade-in main-content" style={{}}>
                 <div
-                  className="cardsContainer"
+                  className="cardsContainer responsive-cards"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(2, 1fr)",
@@ -95,6 +92,7 @@ const App = () => {
                   <img
                     src="/assets/copilotlogo.png"
                     alt="About section image"
+                    className="about-image"
                     style={{
                       scale: "1.25",
                       justifySelf: "end",
@@ -105,13 +103,13 @@ const App = () => {
                     }}
                   />
                 </div>
-                <div style={{ gridColumn: "1 / -1", marginTop: "4rem" }}>
+                <div className="timeline-section">
                   <Timeline />
                 </div>
-                <div style={{ gridColumn: "1 / -1", marginTop: "4rem" }}>
+                <div className="projects-section">
                   <Projects />
                 </div>
-                <div style={{ gridColumn: "1 / -1", marginTop: "4rem" }}>
+                <div className="contact-section">
                   <Contact />
                 </div>
                 <Footer />

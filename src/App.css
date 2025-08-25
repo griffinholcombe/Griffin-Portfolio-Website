@@ -123,4 +123,59 @@ html.no-scroll {
   height: calc(100vh - 80px);
 }
 
+.main-content {
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.responsive-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.about-image {
+  scale: 1.25;
+  justify-self: end;
+  width: 500px;
+  height: 300px;
+  margin-top: 10rem;
+  align-self: start;
+  max-width: 100%;
+  height: auto;
+}
+
+.timeline-section,
+.projects-section,
+.contact-section {
+  grid-column: 1 / -1;
+  margin-top: 4rem;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 20px;
+  }
+  .responsive-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 2rem;
+    justify-self: center;
+    align-self: center;
+    scale: 1;
+  }
+  .timeline-section,
+  .projects-section,
+  .contact-section {
+    margin-top: 2rem;
+  }
+}
+
 
