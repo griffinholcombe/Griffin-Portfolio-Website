@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
         "Currently developing a portfolio website through fullstack development as freelance work. The website includes multiple pages, images, videos to showcase a media major's various works.",
       technologies: ["React", "TypeScript", "CSS", "HTML"],
       image: "/assets/project/screenshots/portfoliowebsite.png",
-      link: "https://github.com/yourusername/project1",
+      link: "https://github.com/griffinholcombe/Griffin-Portfolio-Website",
     },
   ];
 
