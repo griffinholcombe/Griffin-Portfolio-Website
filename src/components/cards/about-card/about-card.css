@@ -1,0 +1,12 @@
+.about-card {
+    padding: 2em;
+    text-align: left;
+}
+
+.about-card h2 {
+    font-size: "12px";
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    font-family: inconsolata, monospace;
+}
+

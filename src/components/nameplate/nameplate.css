@@ -1,0 +1,53 @@
+.left-char,
+.right-char {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.left-char.move-out {
+  transform: translateX(-20px); /* Move left character outward */
+}
+
+.right-char.move-out {
+  transform: translateX(20px); /* Move right character outward */
+}
+
+.nameplate-text {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.software-text {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.nameplate-btn {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  color: #ffff; /* Set text color */
+  background-color: #0000;
+}
+
+.nameplate-btn:hover {
+  background-color: #0000; /* Change background on hover */
+  color: #ffff; /* Change text color on hover */
+  box-shadow: none; /* Remove any glow effect */
+}
+
+/* Optional: Add inward movement */
+@keyframes moveInOut {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}

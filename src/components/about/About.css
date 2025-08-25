@@ -1,0 +1,112 @@
+.about-container {
+  padding: 0 1rem 1rem 1rem;
+  color: white;
+  font-family: 'Inconsolata', monospace;
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: 'Inconsolata', monospace;
+  margin-bottom: 2rem;
+  color: white;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.about-content {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+
+.about-text-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.about-text-section:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.about-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.about-highlights {
+  display: grid;
+  gap: 1rem;
+}
+
+.highlight-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.highlight-item:nth-child(1) { animation-delay: 0.2s; }
+.highlight-item:nth-child(2) { animation-delay: 0.3s; }
+.highlight-item:nth-child(3) { animation-delay: 0.4s; }
+
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.highlight-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  color: white;
+}
+
+.highlight-item p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-text-section {
+    padding: 1rem;
+  }
+  
+  .about-description {
+    font-size: 0.85rem;
+  }
+  
+  .highlight-item {
+    padding: 0.8rem;
+  }
+}
