@@ -1,5 +1,24 @@
-import React, { useState } from "react";
+/*
+  === EmailJS Email Template Example ===
+
+  Subject: New Contact Form Submission from {{name}}
+
+  Body:
+  You have received a new message from your portfolio website contact form.
+
+  Name: {{name}}
+  Email: {{email}}
+
+  Message:
+  {{message}}
+
+  ---
+  (In EmailJS, use variables: {{name}}, {{email}}, {{message}})
+*/
+
+import React, { useState, useRef } from "react";
 import "./Contact.css";
+import emailjs from "@emailjs/browser";
 
 interface ContactForm {
   name: string;
@@ -15,6 +34,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string>("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,13 +52,12 @@ const Contact: React.FC = () => {
     setSubmitStatus("");
 
     try {
-      // TODO: Implement email sending logic here
-      // Currently only logs to console - no actual storage/sending
-      console.log("Form data:", formData);
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      await emailjs.sendForm(
+        "service_4d8o2en", // <-- Replace with your EmailJS service ID
+        "template_veiu0of", // <-- Replace with your EmailJS template ID
+        formRef.current!,
+        "WoF5_-ke-aYvalaAd" // <-- Replace with your EmailJS user/public key
+      );
       setSubmitStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -57,7 +76,7 @@ const Contact: React.FC = () => {
         possible.
       </p>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
         <div className="form-group">
           <input
             type="text"
