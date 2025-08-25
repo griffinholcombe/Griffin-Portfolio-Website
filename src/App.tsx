@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Nameplate from "./components/nameplate/nameplate";
 import "./App.css";
 import Header from "./components/header/header";
